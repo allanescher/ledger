@@ -78,3 +78,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'rails_performance'
+
+gem 'will_paginate', '~> 4.0'
+
