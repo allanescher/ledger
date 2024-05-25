@@ -31,3 +31,11 @@ bin/rails db:create db:migrate RAILS_ENV=test
 
 bundle exec rspec
 ```
+
+## Erros
+
+```sh
+Caso apresente o erro 6379 utilizar o comando:
+sudo service redis-server start
+Comando necessário para subir o redis Performance.
+```
