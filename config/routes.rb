@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  require 'sidekiq'
+  require 'sidekiq/web'
+
   get 'reports/balance'
   get 'dashboard/index'
   resources :payments
@@ -20,4 +24,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "dashboard#index"
+
+  #Página de e-mail
+  mount LetterOpenerWeb::Engine, at: "/emails" if Rails.env.development?
+
+  #Implementando o Sidekiq
+  mount Sidekiq::Web => '/sidekiq'
 end
